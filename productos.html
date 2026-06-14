@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super PC's - Productos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="Super Pc's.png" alt="Super PC's Logo" class="logo-img">
+        <span class="logo-text">Super PC's</span>
+      </a>
+      <button class="cart-btn" id="cart-btn">
+        🛒 <span id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <div class="dropdown">
+        <button class="dropbtn">Componentes de PC ▾</button>
+        <div class="dropdown-content">
+          <a href="productos.html?cat=gabinete">Gabinetes</a>
+          <a href="productos.html?cat=ram">Memorias RAM</a>
+          <a href="productos.html?cat=microprocesador">Microprocesadores</a>
+          <a href="productos.html?cat=gpu">Placas de Video</a>
+          <a href="productos.html?cat=refrigeracion">Refrigeración</a>
+          <a href="productos.html?cat=ssd">Almacenamiento</a>
+          <a href="productos.html?cat=motherboard">Motherboards</a>
+          <a href="productos.html?cat=fuente">Fuentes de poder</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-layout">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <button class="sidebar-toggle">Categorías ▾</button>
+        <div class="sidebar-body" id="sidebar-categorias">
+          <!-- populated by JS -->
+        </div>
+      </div>
+      <div class="sidebar-section">
+        <button class="sidebar-toggle">Filtros ▾</button>
+        <div class="sidebar-body" id="sidebar-filtros">
+          <div id="filtros-marcas"></div>
+          <div class="price-filter">
+            <label>Precio</label>
+            <div class="price-inputs">
+              <input type="number" id="price-from" placeholder="Desde" min="0">
+              <input type="number" id="price-to" placeholder="Hasta" min="0">
+            </div>
+            <button class="search-btn" id="search-btn">🔍 Buscar</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="products-header">
+        <a href="index.html" class="back-link">&larr; Volver</a>
+        <h2 class="section-title" id="category-title">Productos</h2>
+      </div>
+      <div id="products-container"></div>
+    </main>
+  </div>
+
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3>Carrito</h3>
+      <button id="cart-close">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <p class="cart-empty">El carrito está vacío</p>
+    </div>
+    <div class="cart-footer">
+      <p>Total: <strong id="cart-total">$0</strong></p>
+      <button class="cart-clear" id="cart-clear">Vaciar carrito</button>
+    </div>
+  </aside>
+  <div class="cart-overlay" id="cart-overlay"></div>
+
+  <footer>
+    <p>&copy; 2026 Super PC's - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script src="prod-app.js"></script>
+</body>
+</html>

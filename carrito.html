@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super PC's - Carrito de Compras</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="Super Pc's.png" alt="Super PC's Logo" class="logo-img">
+        <span class="logo-text">Super PC's</span>
+      </a>
+      <button class="cart-btn" id="cart-btn-header">
+        🛒 <span id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <div class="dropdown">
+        <button class="dropbtn">Componentes de PC ▾</button>
+        <div class="dropdown-content">
+          <a href="productos.html?cat=gabinete">Gabinetes</a>
+          <a href="productos.html?cat=ram">Memorias RAM</a>
+          <a href="productos.html?cat=microprocesador">Microprocesadores</a>
+          <a href="productos.html?cat=gpu">Placas de Video</a>
+          <a href="productos.html?cat=refrigeracion">Refrigeración</a>
+          <a href="productos.html?cat=ssd">Almacenamiento</a>
+          <a href="productos.html?cat=motherboard">Motherboards</a>
+          <a href="productos.html?cat=fuente">Fuentes de poder</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="checkout-steps">
+    <div class="step active">
+      <span class="step-icon">🛒</span>
+      <span class="step-label">Carrito</span>
+    </div>
+    <div class="step">
+      <span class="step-icon">💳</span>
+      <span class="step-label">Forma de pago</span>
+    </div>
+    <div class="step">
+      <span class="step-icon step-check">✓</span>
+      <span class="step-label">Confirmación</span>
+    </div>
+  </div>
+
+  <div class="checkout-layout">
+    <section class="checkout-products">
+      <h2 class="section-title">Detalle de la Compra</h2>
+      <div id="checkout-items">
+        <p class="cart-empty">No ha seleccionado ningun producto</p>
+      </div>
+
+      <div class="checkout-actions">
+        <a href="productos.html?cat=all" class="back-link">+ Agregar más productos</a>
+      </div>
+    </section>
+
+    <aside class="checkout-summary">
+      <h3>Resumen de compra</h3>
+      <div class="summary-row">
+        <span>Subtotal:</span>
+        <span id="checkout-subtotal">$0</span>
+      </div>
+      <div class="summary-row">
+        <span>Envío:</span>
+        <span id="checkout-shipping">$0</span>
+      </div>
+      <div class="summary-row coupon-row">
+        <span>Cupón de descuento:</span>
+        <div class="coupon-input">
+          <input type="text" id="coupon-code" placeholder="Código">
+          <button id="apply-coupon">Aplicar</button>
+        </div>
+      </div>
+      <div class="summary-row discount-row" style="display:none">
+        <span>Descuento:</span>
+        <span id="checkout-discount">-$0</span>
+      </div>
+      <hr>
+      <div class="summary-row total-row">
+        <span>Total:</span>
+        <strong id="checkout-total">$0</strong>
+      </div>
+      <button class="checkout-btn" id="checkout-btn">Continuar con la compra</button>
+      <p class="checkout-info">Los precios incluyen IVA</p>
+    </aside>
+  </div>
+
+  <!-- Payment step (hidden initially) -->
+  <div class="payment-section" id="payment-section" style="display:none">
+    <h2 class="section-title">Forma de Pago</h2>
+    <div class="payment-options">
+      <div class="payment-option">
+        <span class="payment-icon">💳</span>
+        <div>
+          <strong>Tarjeta de crédito / débito</strong>
+          <small>Hasta 12 cuotas sin interés</small>
+        </div>
+      </div>
+      <div class="payment-option">
+        <span class="payment-icon">🏦</span>
+        <div>
+          <strong>Transferencia bancaria</strong>
+          <small>10% de descuento</small>
+        </div>
+      </div>
+      <div class="payment-option">
+        <span class="payment-icon"><img src="Mercado Pago.png" alt="Mercado Pago" style="height:32px;width:40px;object-fit:contain"></span>
+        <div>
+          <strong>Mercado Pago</strong>
+          <small>Todos los medios</small>
+        </div>
+      </div>
+    </div>
+    <div class="checkout-actions" style="justify-content:center;gap:1rem">
+      <button class="checkout-btn" id="confirm-btn">Confirmar compra</button>
+      <button class="back-link" id="back-to-cart">Volver al carrito</button>
+    </div>
+  </div>
+
+  <!-- Confirmation (hidden initially) -->
+  <div class="confirmation-section" id="confirmation-section" style="display:none">
+    <div class="confirmation-box">
+      <span class="confirmation-icon">✅</span>
+      <h2>Compra confirmada</h2>
+      <p>Gracias por tu compra. Recibirás un email con los detalles del pedido.</p>
+      <a href="index.html" class="checkout-btn" style="display:inline-block;text-decoration:none;margin-top:1rem">Volver al inicio</a>
+    </div>
+  </div>
+
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3>Carrito</h3>
+      <button id="cart-close">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <p class="cart-empty">El carrito está vacío</p>
+    </div>
+    <div class="cart-footer">
+      <p>Total: <strong id="cart-total">$0</strong></p>
+      <button class="cart-clear" id="cart-clear">Vaciar carrito</button>
+    </div>
+  </aside>
+  <div class="cart-overlay" id="cart-overlay"></div>
+
+  <footer>
+    <p>&copy; 2026 Super PC's - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script src="carrito-app.js"></script>
+</body>
+</html>

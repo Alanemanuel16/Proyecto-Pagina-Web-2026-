@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super PC's - GPUs, RAM, SSD, Gabinetes y Monitores</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="Super Pc's.png" alt="Super PC's Logo" class="logo-img">
+        <span class="logo-text">Super PC's</span>
+      </a>
+      <button class="cart-btn" id="cart-btn">
+        🛒 <span id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <div class="dropdown">
+        <button class="dropbtn">Componentes de PC ▾</button>
+        <div class="dropdown-content">
+          <a href="productos.html?cat=gabinete">Gabinetes</a>
+          <a href="productos.html?cat=ram">Memorias RAM</a>
+          <a href="productos.html?cat=microprocesador">Microprocesadores</a>
+          <a href="productos.html?cat=gpu">Placas de Video</a>
+          <a href="productos.html?cat=refrigeracion">Refrigeración</a>
+          <a href="productos.html?cat=ssd">Almacenamiento</a>
+          <a href="productos.html?cat=motherboard">Motherboards</a>
+          <a href="productos.html?cat=fuente">Fuentes de poder</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero"></section>
+
+  <section class="info-bars">
+    <div class="info-bar">
+      <svg class="info-icon" viewBox="0 0 24 24" width="28" height="28">
+        <path fill="#1e3a8a" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+      </svg>
+      <div class="info-text">
+        <strong>COMPRA ONLINE</strong>
+        <small>Retiralo en nuestro local</small>
+      </div>
+    </div>
+    <div class="info-bar">
+      <svg class="info-icon" viewBox="0 0 24 24" width="28" height="28">
+        <path fill="#1e3a8a" d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+      </svg>
+      <div class="info-text">
+        <strong>ENVÍOS A TODO EL PAÍS</strong>
+        <small>A toda Argentina</small>
+      </div>
+    </div>
+    <div class="info-bar">
+      <svg class="info-icon" viewBox="0 0 24 24" width="28" height="28">
+        <path fill="#1e3a8a" d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+      </svg>
+      <div class="info-text">
+        <strong>PAGA ONLINE</strong>
+        <small>Hasta 12 cuotas sin interés</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories">
+    <h2 class="section-title">Categorías</h2>
+    <div class="categories-grid">
+      <a href="productos.html?cat=all" class="category-card">
+        <img src="https://placehold.co/400x250/2563eb/ffffff?text=Todos+los+Productos" alt="Todos los Productos">
+        <span class="category-name">Todos</span>
+      </a>
+      <a href="productos.html?cat=gpu" class="category-card">
+        <img src="Placa-De-Video.png" alt="Placas Gráficas">
+        <span class="category-name">Placas Gráficas</span>
+      </a>
+      <a href="productos.html?cat=ram" class="category-card">
+        <img src="Memoria-RAM.png" alt="Memorias RAM">
+        <span class="category-name">Memorias RAM</span>
+      </a>
+      <a href="productos.html?cat=ssd" class="category-card">
+        <img src="Almacenamiento-SSD-NVMe.png" alt="Almacenamiento SSD">
+        <span class="category-name">Almacenamiento SSD</span>
+      </a>
+      <a href="productos.html?cat=gabinete" class="category-card">
+        <img src="Gabinetes.png" alt="Gabinetes">
+        <span class="category-name">Gabinetes</span>
+      </a>
+      <a href="productos.html?cat=monitor" class="category-card">
+        <img src="Monitores.png" alt="Monitores">
+        <span class="category-name">Monitores</span>
+      </a>
+      <a href="productos.html?cat=microprocesadores" class="category-card">
+        <img src="Intel i9 Ultra.png" alt="Microprocesadores">
+        <span class="category-name">Microprocesadores</span>
+      </a>
+      <a href="productos.html?cat=disipadores" class="category-card">
+        <img src="Disipadores.png" alt="Disipadores">
+        <span class="category-name">Disipadores</span>
+      </a>
+    </div>
+  </section>
+
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3>Carrito</h3>
+      <button id="cart-close">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <p class="cart-empty">El carrito está vacío</p>
+    </div>
+    <div class="cart-footer">
+      <p>Total: <strong id="cart-total">$0</strong></p>
+      <button class="cart-clear" id="cart-clear">Vaciar carrito</button>
+    </div>
+  </aside>
+  <div class="cart-overlay" id="cart-overlay"></div>
+
+  <footer>
+    <p>&copy; 2026 Super PC's - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="cart.js"></script>
+</body>
+</html>
