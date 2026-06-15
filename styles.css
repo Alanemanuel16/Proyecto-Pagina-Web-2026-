@@ -1035,7 +1035,7 @@ footer {
     gap: 0.5rem;
   }
   .back-link {
-    position: static;
+    display: none;
   }
   .checkout-layout {
     flex-direction: column;
@@ -1058,6 +1058,11 @@ footer {
   .step:last-child { border-radius: 6px; }
   #products-container {
     justify-items: center;
+    justify-content: center;
+  }
+  #products-container .product-card {
+    width: 100%;
+    max-width: 320px;
   }
   .nav-back-btn {
     display: inline-block;
