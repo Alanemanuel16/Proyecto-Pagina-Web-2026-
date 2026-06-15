@@ -33,15 +33,23 @@ const products = [
   { id: 26, name: "Crucial P5 Plus",               category: "ssd",      brand: "Crucial",       price: 109,  specs: "1TB NVMe M.2 PCIe 4.0, 6600MB/s" },
   { id: 27, name: "Kingston NV2",                  category: "ssd",      brand: "Kingston",      price: 69,   specs: "1TB NVMe M.2 PCIe 4.0, 3500MB/s" },
   // ─── Motherboards ───
-  { id: 28, name: "ASUS ROG Strix B650-A",         category: "motherboard", brand: "ASUS",       price: 249,  specs: "ATX, AM5, DDR5, PCIe 5.0, WiFi 6E" },
-  { id: 29, name: "Gigabyte Z790 Aorus Elite",     category: "motherboard", brand: "Gigabyte",   price: 229,  specs: "ATX, LGA1700, DDR5, PCIe 5.0, WiFi 6E" },
-  { id: 30, name: "MSI MAG B760 Tomahawk",         category: "motherboard", brand: "MSI",        price: 199,  specs: "ATX, LGA1700, DDR5, PCIe 4.0, 2.5GbE" },
-  { id: 31, name: "ASUS TUF Gaming B650-Plus",     category: "motherboard", brand: "ASUS",       price: 179,  specs: "ATX, AM5, DDR5, PCIe 5.0, 2.5GbE" },
+  { id: 28, name: "Gigabyte A520M K V2",             category: "motherboard", brand: "Gigabyte",   price: 89,   specs: "mATX, AM4, DDR4, PCIe 3.0, HDMI/VGA" },
+  { id: 29, name: "ASUS Prime A520M-K",               category: "motherboard", brand: "ASUS",       price: 99,   specs: "mATX, AM4, DDR4, PCIe 3.0, M.2" },
+  { id: 30, name: "ASUS Prime H610M-F D4",            category: "motherboard", brand: "ASUS",       price: 119,  specs: "mATX, LGA1700, DDR4, PCIe 4.0, M.2" },
+  { id: 31, name: "Gigabyte B550M K",                 category: "motherboard", brand: "Gigabyte",   price: 129,  specs: "mATX, AM4, DDR4, PCIe 4.0, M.2" },
+  { id: 32, name: "ASUS Prime A620M-K",               category: "motherboard", brand: "ASUS",       price: 139,  specs: "mATX, AM5, DDR5, PCIe 4.0, M.2" },
+  { id: 33, name: "Gigabyte B760M E",                 category: "motherboard", brand: "Gigabyte",   price: 159,  specs: "mATX, LGA1700, DDR5, PCIe 4.0, M.2" },
+  { id: 34, name: "ASRock B550M Phantom Gaming 4",    category: "motherboard", brand: "ASRock",     price: 169,  specs: "mATX, AM4, DDR4, PCIe 4.0, RGB" },
+  { id: 35, name: "Gigabyte A620M S2H",               category: "motherboard", brand: "Gigabyte",   price: 149,  specs: "mATX, AM5, DDR5, PCIe 4.0, M.2" },
   // ─── Fuentes de Poder ───
-  { id: 32, name: "Corsair RM850x",               category: "fuente",    brand: "Corsair",       price: 129,  specs: "850W, 80+ Gold, Modular, 135mm Silencioso" },
-  { id: 33, name: "EVGA SuperNOVA 1000 G7",       category: "fuente",    brand: "EVGA",          price: 179,  specs: "1000W, 80+ Gold, Modular, Fully" },
-  { id: 34, name: "Seasonic Focus GX-750",         category: "fuente",    brand: "Seasonic",     price: 109,  specs: "750W, 80+ Gold, Modular, Compacta" },
-  { id: 35, name: "Thermaltake Toughpower GF3",   category: "fuente",    brand: "Thermaltake",   price: 149,  specs: "850W, 80+ Gold, ATX 3.0, PCIe 5.0" },
+  { id: 36, name: "Thermaltake TR2 500W",            category: "fuente",    brand: "Thermaltake",   price: 59,   specs: "500W, 80+, ATX, Ventilador 120mm" },
+  { id: 37, name: "Raidmax XTB 650W",                category: "fuente",    brand: "Raidmax",       price: 69,   specs: "650W, 80+ White, ATX, Ventilador 120mm" },
+  { id: 38, name: "Raptor VOL 650W",                 category: "fuente",    brand: "Raptor",        price: 79,   specs: "650W, 80+ Bronze, ATX, Semi-Modular" },
+  { id: 39, name: "MSI MAG A550BN 550W",             category: "fuente",    brand: "MSI",           price: 85,   specs: "550W, 80+ Bronze, ATX, Ventilador 120mm" },
+  { id: 40, name: "Gigabyte 550W 80+ Silver",        category: "fuente",    brand: "Gigabyte",      price: 89,   specs: "550W, 80+ Silver, ATX 3.1" },
+  { id: 41, name: "Corsair CV650 650W",              category: "fuente",    brand: "Corsair",       price: 99,   specs: "650W, 80+ Bronze, ATX, Ventilador 120mm" },
+  { id: 42, name: "Raidmax XTB 750W",                category: "fuente",    brand: "Raidmax",       price: 109,  specs: "750W, 80+ White, ATX, Ventilador 120mm" },
+  { id: 43, name: "Gigabyte 750W 80+ Gold",          category: "fuente",    brand: "Gigabyte",      price: 139,  specs: "750W, 80+ Gold, ATX, Modular" },
 ];
 
 const catPlaceholders = {
