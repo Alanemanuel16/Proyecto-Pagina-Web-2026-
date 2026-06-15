@@ -1057,12 +1057,13 @@ footer {
   .step:first-child { border-radius: 6px; }
   .step:last-child { border-radius: 6px; }
   #products-container {
-    justify-items: center;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   #products-container .product-card {
+    max-width: 360px;
     width: 100%;
-    max-width: 320px;
   }
   .nav-back-btn {
     display: inline-block;
