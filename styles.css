@@ -1057,8 +1057,27 @@ footer {
   }
   .step:first-child { border-radius: 6px; }
   .step:last-child { border-radius: 6px; }
+  #products-container {
+    grid-template-columns: 1fr;
+  }
   #products-container .product-card {
     flex-direction: row;
+    padding: 1.2rem;
+    gap: 1.2rem;
+  }
+  #products-container .product-card img {
+    width: 160px;
+    height: 160px;
+  }
+  #products-container .product-info h3 {
+    font-size: 1.1rem;
+  }
+  #products-container .price {
+    font-size: 1.3rem;
+  }
+  #products-container .add-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
   }
   .nav-back-btn {
     display: inline-block;
