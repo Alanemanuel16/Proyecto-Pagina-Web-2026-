@@ -50,6 +50,12 @@ const products = [
   { id: 41, name: "Corsair CV650 650W",              category: "fuente",    brand: "Corsair",       price: 75000,   specs: "650W, 80+ Bronze, ATX, Ventilador 120mm", image: "https://www.infinitonline.com.ar/thumb/NBMPE-6502-ACAAG56543_400x400.jpg" },
   { id: 42, name: "Raidmax XTB 750W",                category: "fuente",    brand: "Raidmax",       price: 80000,  specs: "750W, 80+ White, ATX, Ventilador 120mm", image: "https://www.infinitonline.com.ar/thumb/0000NBRX-800ACV56531_400x400.png" },
   { id: 43, name: "Gigabyte 750W 80+ Gold",          category: "fuente",    brand: "Gigabyte",      price: 85000,  specs: "750W, 80+ Gold, ATX, Modular", image: "https://www.infinitonline.com.ar/thumb/NBGP-UD750GMPG556557_400x400.jpg" },
+  // ─── Monitores Gaming ───
+  { id: 44, name: "MSI Monitor Gaming G242Le14 24\" 144Hz",          category: "monitor", brand: "MSI",       price: 275457,  specs: "24\" FHD, 144Hz, 1ms, HDMI/DP, FreeSync", image: "https://www.infinitonline.com.ar/thumb/0000000000004445413571024_400x400.png" },
+  { id: 45, name: "Monitor Gamer Gigabyte 24.5\" GS25F2",           category: "monitor", brand: "Gigabyte",   price: 292826,  specs: "24.5\" FHD, 180Hz, 1ms, IPS, FreeSync", image: "https://www.infinitonline.com.ar/thumb/000000000000433962356Mtec-Gigabyte-GS25F2-Monitor-Gamer-IPS-768x768_400x400.jpg" },
+  { id: 46, name: "Monitor 27\" Asus VG279Q3A Gaming FHD IPS 180Hz", category: "monitor", brand: "ASUS",      price: 358093,  specs: "27\" FHD, 180Hz, 1ms, IPS, FreeSync", image: "https://www.infinitonline.com.ar/thumb/000000000000410905285Sin-titulo_400x400.png" },
+  { id: 47, name: "Monitor 24.5\" Gamer Zowie XL2546K 240Hz DyAc",  category: "monitor", brand: "Zowie",      price: 595151,  specs: "24.5\" FHD, 240Hz, 0.5ms, TN, DyAc", image: "https://www.infinitonline.com.ar/thumb/0NB9H.LJNLB.QBR56759_400x400.jpg" },
+  { id: 48, name: "AOC Monitor LED Plano Gamer 27\" 2790Vx",        category: "monitor", brand: "AOC",        price: 644758,  specs: "27\" FHD, 180Hz, 1ms, IPS, FreeSync", image: "https://www.infinitonline.com.ar/thumb/000000NBG2790VX56426_400x400.jpg" },
 ];
 
 const catPlaceholders = {
@@ -61,6 +67,7 @@ const catPlaceholders = {
   ssd:             ["0369a1","ffffff"],
   motherboard:     ["0f766e","ffffff"],
   fuente:          ["a16207","ffffff"],
+  monitor:         ["6d28d9","ffffff"],
 };
 
 products.forEach(p => {
@@ -80,6 +87,7 @@ const menuCategories = [
   { key: "ssd",             label: "Almacenamiento" },
   { key: "motherboard",     label: "Motherboards" },
   { key: "fuente",          label: "Fuentes de poder" },
+  { key: "monitor",         label: "Monitores Gaming" },
 ];
 
 const brandsByCategory = {};
