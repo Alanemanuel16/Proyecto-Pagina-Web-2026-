@@ -1,6 +1,6 @@
-const SUPABASE_URL = "https://tu-proyecto.supabase.co";
-const SUPABASE_ANON_KEY = "tu-anon-key";
-const TABLE_NAME = "products";
+const SUPABASE_URL = "https://snrqejlyhrhvtlovzbex.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_hCxZUCF36pDHxpF-6f9MUg_Fo7_h4_V";
+const TABLE_NAME = "Products";
 
 const form = document.getElementById("product-form");
 const messageEl = document.getElementById("message");
@@ -62,11 +62,11 @@ form.addEventListener("submit", async (e) => {
     category: document.getElementById("category").value,
     brand: document.getElementById("brand").value.trim(),
     price: Number(document.getElementById("price").value),
-    specs: document.getElementById("specs").value.trim(),
+    speces: document.getElementById("specs").value.trim(),
     image: document.getElementById("image").value.trim() || null,
   };
 
-  if (!product.name || !product.category || !product.brand || !product.price || !product.specs) {
+  if (!product.name || !product.category || !product.brand || !product.price || !product.speces) {
     showMessage("Completá todos los campos obligatorios.", "error");
     submitBtn.disabled = false;
     submitBtn.textContent = "Insertar Producto";
