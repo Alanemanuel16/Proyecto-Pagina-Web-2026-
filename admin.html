@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super PC's - Admin: Insertar Producto</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Panel de Administración</h1>
+    <a href="index.html">Volver a la tienda</a>
+  </header>
+
+  <div class="admin-container">
+    <div class="form-card">
+      <h2>Insertar Producto</h2>
+      <p class="subtitle">Completá los campos para agregar un nuevo producto a Supabase.</p>
+
+      <form id="product-form">
+        <div class="form-group">
+          <label for="name">Nombre del producto *</label>
+          <input type="text" id="name" name="name" required placeholder="Ej: Monitor Gamer Gigabyte 24.5 GS25F2">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="category">Categoría *</label>
+            <select id="category" name="category" required></select>
+          </div>
+          <div class="form-group">
+            <label for="brand">Marca *</label>
+            <input type="text" id="brand" name="brand" required placeholder="Ej: Gigabyte">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="price">Precio ($) *</label>
+            <input type="number" id="price" name="price" required min="0" placeholder="Ej: 292826">
+          </div>
+          <div class="form-group">
+            <label for="image">URL de la imagen</label>
+            <input type="url" id="image" name="image" placeholder="https://www.infinitonline.com.ar/thumb/...">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="specs">Especificaciones *</label>
+          <textarea id="specs" name="specs" required placeholder="Ej: 24.5 FHD, 180Hz, 1ms, IPS, FreeSync"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Insertar Producto</button>
+      </form>
+
+      <div id="message"></div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
