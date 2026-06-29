@@ -1,4 +1,4 @@
-const products = [
+let products = [
   // ─── Gabinetes ───
   { id: 1,  name: "Gabinete Gamer Aureox Skoll Arx 200G", category: "gabinete", brand: "Aureox",       price: 40000,   specs: "Mid Tower, Vidrio Templado, ATX, Negro", image: "https://www.infinitonline.com.ar/thumb/NBARX200GSKOLL56599_400x400.png" },
   { id: 2,  name: "Gabinete Gamer Aureox Vanth Arx 205G", category: "gabinete", brand: "Aureox",       price: 30000,  specs: "Mid Tower, Vidrio Templado, ATX, Blanco", image: "https://www.infinitonline.com.ar/thumb/NBARX205GVANTH56599_400x400.png" },
