@@ -6,7 +6,8 @@ const catLabels = {
   microprocesador: "Microprocesadores", gpu: "Placas de Video",
   refrigeracion: "Refrigeración", ssd: "Almacenamiento",
   motherboard: "Motherboards", fuente: "Fuentes de poder",
-  monitor: "Monitores"
+  monitor: "Monitores",
+  nuestros: "Nuestros Productos"
 };
 const badgeLabels = {
   gpu: "GPU", ram: "RAM", ssd: "SSD", gabinete: "Gabinete",
@@ -26,7 +27,9 @@ function getCategory() {
 function renderProducts() {
   let filtered = currentCat === "all"
     ? products
-    : products.filter(p => p.category === currentCat);
+    : currentCat === "nuestros"
+      ? products.filter(p => p.isFromSupabase)
+      : products.filter(p => p.category === currentCat);
 
   if (selectedBrands.size > 0) {
     filtered = filtered.filter(p => selectedBrands.has(p.brand));
@@ -122,7 +125,9 @@ function renderFiltros() {
   const el = document.getElementById("filtros-marcas");
   const brands = currentCat === "all"
     ? [...new Set(products.map(p => p.brand))].sort()
-    : (brandsByCategory[currentCat] || []);
+    : currentCat === "nuestros"
+      ? [...new Set(products.filter(p => p.isFromSupabase).map(p => p.brand))].sort()
+      : (brandsByCategory[currentCat] || []);
   el.innerHTML = brands.map(b => {
     const id = "cb-" + b.replace(/\s/g, '_');
     return `<label class="brand-filter-label">
@@ -155,8 +160,55 @@ document.getElementById("search-btn")?.addEventListener("click", renderProducts)
 document.getElementById("price-from")?.addEventListener("input", renderProducts);
 document.getElementById("price-to")?.addEventListener("input", renderProducts);
 
+// ─── Supabase ───
+const SUPABASE_URL = "https://snrqejlyhrhvtlovzbex.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_hCxZUCF36pDHxpF-6f9MUg_Fo7_h4_V";
+const TABLE_NAME = "Products";
+
+async function loadSupabaseProducts() {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}?order=id.desc`, {
+      headers: {
+        "apikey": SUPABASE_ANON_KEY,
+        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+    });
+    if (!res.ok) return;
+    const data = await res.json();
+    data.forEach(sp => {
+      const newP = {
+        id: 1000 + sp.id,
+        name: sp.name,
+        category: sp.category,
+        brand: sp.brand,
+        price: sp.price,
+        specs: sp.speces || "",
+        image: sp.image || null,
+        isFromSupabase: true,
+      };
+      if (!newP.image) {
+        const [bg, fg] = catPlaceholders[newP.category] || ["1e3a8a","ffffff"];
+        const short = newP.name.length > 20 ? newP.name.slice(0,18)+".." : newP.name;
+        newP.image = `https://placehold.co/300x200/${bg}/${fg}?text=${encodeURIComponent(short)}`;
+      }
+      products.push(newP);
+    });
+    Object.keys(brandsByCategory).forEach(k => delete brandsByCategory[k]);
+    products.forEach(p => {
+      if (!brandsByCategory[p.category]) brandsByCategory[p.category] = new Set();
+      brandsByCategory[p.category].add(p.brand);
+    });
+    Object.keys(brandsByCategory).forEach(k => {
+      brandsByCategory[k] = [...brandsByCategory[k]].sort();
+    });
+  } catch (_) {}
+}
+
 // ─── Init ───
-currentCat = getCategory();
-renderCategoriasSidebar();
-renderFiltros();
-renderProducts();
+(async () => {
+  await loadSupabaseProducts();
+  currentCat = getCategory();
+  renderCategoriasSidebar();
+  renderFiltros();
+  renderProducts();
+})();

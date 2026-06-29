@@ -88,6 +88,7 @@ const menuCategories = [
   { key: "motherboard",     label: "Motherboards" },
   { key: "fuente",          label: "Fuentes de poder" },
   { key: "monitor",         label: "Monitores Gaming" },
+  { key: "nuestros",        label: "Nuestros Productos" },
 ];
 
 const brandsByCategory = {};
