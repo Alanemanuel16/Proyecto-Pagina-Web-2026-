@@ -161,10 +161,6 @@ document.getElementById("price-from")?.addEventListener("input", renderProducts)
 document.getElementById("price-to")?.addEventListener("input", renderProducts);
 
 // ─── Supabase ───
-const SUPABASE_URL = "https://snrqejlyhrhvtlovzbex.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_hCxZUCF36pDHxpF-6f9MUg_Fo7_h4_V";
-const TABLE_NAME = "Products";
-
 async function loadSupabaseProducts() {
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}?order=id.desc`, {

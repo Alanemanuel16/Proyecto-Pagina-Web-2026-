@@ -1,7 +1,3 @@
-const SUPABASE_URL = "https://snrqejlyhrhvtlovzbex.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_hCxZUCF36pDHxpF-6f9MUg_Fo7_h4_V";
-const TABLE_NAME = "Products";
-
 const form = document.getElementById("product-form");
 const messageEl = document.getElementById("message");
 
