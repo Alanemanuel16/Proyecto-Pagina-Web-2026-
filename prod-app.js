@@ -62,12 +62,15 @@ function renderProducts() {
         <p class="specs">${p.specs}</p>
         <p class="price">$${p.price}</p>
         <button class="add-btn" data-id="${p.id}">Agregar al carrito</button>
+        ${currentCat === "nuestros" ? `<button class="delete-btn" data-id="${p.id}">Eliminar</button>` : ""}
       </div>
     </article>
   `).join("");
 
   container.querySelectorAll(".add-btn").forEach(btn =>
     btn.addEventListener("click", () => addToCart(Number(btn.dataset.id))));
+  container.querySelectorAll(".delete-btn").forEach(btn =>
+    btn.addEventListener("click", () => showDeleteModal(Number(btn.dataset.id))));
   if (typeof cart !== "undefined") updateCartUI();
 }
 
@@ -161,10 +164,6 @@ document.getElementById("price-from")?.addEventListener("input", renderProducts)
 document.getElementById("price-to")?.addEventListener("input", renderProducts);
 
 // ─── Supabase ───
-const SUPABASE_URL = "https://snrqejlyhrhvtlovzbex.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_hCxZUCF36pDHxpF-6f9MUg_Fo7_h4_V";
-const TABLE_NAME = "Products";
-
 async function loadSupabaseProducts() {
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}?order=id.desc`, {
@@ -178,6 +177,7 @@ async function loadSupabaseProducts() {
     data.forEach(sp => {
       const newP = {
         id: 1000 + sp.id,
+        supabaseId: sp.id,
         name: sp.name,
         category: sp.category,
         brand: sp.brand,
@@ -203,6 +203,40 @@ async function loadSupabaseProducts() {
     });
   } catch (_) {}
 }
+
+// ─── Eliminar producto ───
+let pendingDeleteId = null;
+
+function showDeleteModal(id) {
+  pendingDeleteId = id;
+  document.getElementById("delete-modal").classList.remove("hidden");
+}
+
+document.getElementById("modal-yes")?.addEventListener("click", async () => {
+  if (pendingDeleteId === null) return;
+  const p = products.find(x => x.id === pendingDeleteId);
+  if (!p || !p.isFromSupabase || !p.supabaseId) return;
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}?id=eq.${p.supabaseId}`, {
+      method: "DELETE",
+      headers: {
+        "apikey": SUPABASE_ANON_KEY,
+        "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+    });
+    if (!res.ok) throw new Error("Error al eliminar");
+    products = products.filter(x => x.id !== pendingDeleteId);
+    renderProducts();
+    renderFiltros();
+  } catch (_) {}
+  document.getElementById("delete-modal").classList.add("hidden");
+  pendingDeleteId = null;
+});
+
+document.getElementById("modal-no")?.addEventListener("click", () => {
+  document.getElementById("delete-modal").classList.add("hidden");
+  pendingDeleteId = null;
+});
 
 // ─── Init ───
 (async () => {

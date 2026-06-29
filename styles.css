@@ -1016,6 +1016,67 @@ footer {
   font-size: 0.9rem;
 }
 
+/* ─── MODAL ─── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.modal-overlay.hidden { display: none; }
+.modal {
+  background: #0d1f3c;
+  border: 1px solid #1e3a8a;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  max-width: 360px;
+  width: 90%;
+}
+.modal p {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.modal-btn {
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.modal-yes {
+  background: #dc2626;
+  color: #fff;
+}
+.modal-yes:hover { background: #b91c1c; }
+.modal-no {
+  background: #1e3a8a;
+  color: #fff;
+}
+.modal-no:hover { background: #1e40af; }
+
+/* ─── DELETE BUTTON ─── */
+.delete-btn {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-top: 0.4rem;
+}
+.delete-btn:hover { background: #b91c1c; }
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   .info-bars {
